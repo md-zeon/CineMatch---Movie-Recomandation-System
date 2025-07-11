@@ -15,29 +15,66 @@
 </head>
 
 <body>
-<header class="max-w-7xl mx-auto px-4">
-    <!-- Navbar Start -->
-    <nav class="sticky top-0 z-50 border-b border-zinc-500 bg-base-100">
-        <div class="navbar">
-            <div class="navbar-start">
-                <a class="text-xl font-bold flex items-center gap-2 hover:text-primary transition-colors duration-500" href="#">
-                    <i class="fa-solid fa-film text-primary text-3xl"></i>
-                    CineMatch
-                </a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 transition-colors duration-300">
-                    <li class="hover:text-primary"><a href="/cinematch/index.php">Home</a></li>
-                    <li class="hover:text-primary"><a href="/cinematch/browse.php">Browse Movies</a></li>
-                    <li class="hover:text-primary"><a href="#suggestions">Suggestions</a></li>
-                </ul>
-            </div>
-            <div class="navbar-end">
-                <!-- You can add dynamic login/profile button here -->
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-</header>
+    <header class="max-w-7xl mx-auto px-4 sticky top-0 z-50 border-b border-zinc-500 bg-base-100">
+        <!-- Navbar Start -->
+        <nav class="">
+            <div class="navbar">
+                <div class="navbar-start">
+                    <a class="text-xl font-bold flex items-center gap-2 hover:text-primary transition-colors duration-500"
+                        href="#">
+                        <i class="fa-solid fa-film text-primary text-3xl"></i>
+                        CineMatch
+                    </a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 transition-colors duration-300">
+                        <li class="hover:text-primary"><a href="/cinematch/index.php">Home</a></li>
+                        <li class="hover:text-primary"><a href="/cinematch/pages/browse.php">Browse Movies</a></li>
+                        <li class="hover:text-primary"><a href="#suggestions">Suggestions</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <!-- You can add dynamic login/profile button here -->
+                    <div class="navbar-end">
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Search" class="input input-bordered w-32 md:w-auto" />
+                            <div class="dropdown dropdown-end">
+                                <div tabindex="0" role="button"
+                                    class="btn btn-ghost btn-circle avatar border border-gray-300">
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+                                <ul tabindex="0"
+                                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow transition-colors duration-300">
+                                    <li class="hover:text-primary">
+                                        <a class="justify-between">
+                                            My Profile
+                                            <span class="badge">New</span>
+                                        </a>
+                                    </li>
+                                    <li class="hover:text-primary"><a href="#watchlist">Watchlist</a></li>
+                                    <li class="hover:text-primary"><a href="#suggestions">Suggestions</a></li>
+                                    <li class="border-b border-gray-400 border-t hover:text-primary"><a>Admin Panel</a>
+                                    </li>
+                                    <li class="hover:text-primary"><a href="#login">Login</a></li>
+                                    <li class="hover:text-primary"><a href="#register">Register</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown dropdown-end">
+                                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                                    <i class="fa-solid fa-bars text-lg"></i>
+                                </div>
+                                <ul tabindex="0"
+                                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#browse">Browse Movies</a></li>
+                                    <li><a href="#suggestions">Suggestions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+        <!-- Navbar End -->
+    </header>
 
-<main class="max-w-7xl mx-auto px-4 py-12">
+    <main class="max-w-7xl mx-auto px-4 py-12">

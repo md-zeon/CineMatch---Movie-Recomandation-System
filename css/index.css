@@ -5,25 +5,3 @@
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
-
-.floating-multi {
-	animation: floatingEffect 6s ease-in-out infinite;
-}
-
-@keyframes floatingEffect {
-	0% {
-		transform: translateY(0px) translateX(0px);
-	}
-	25% {
-		transform: translateY(-5px) translateX(3px);
-	}
-	50% {
-		transform: translateY(0px) translateX(0px);
-	}
-	75% {
-		transform: translateY(5px) translateX(-3px);
-	}
-	100% {
-		transform: translateY(0px) translateX(0px);
-	}
-}
