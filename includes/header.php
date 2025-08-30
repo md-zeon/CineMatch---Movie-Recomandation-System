@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="night">
 
@@ -34,10 +35,10 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <!-- You can add dynamic login/profile button here -->
-                    <div class="navbar-end">
-                        <div class="flex gap-2">
-                            <input type="text" placeholder="Search" class="input input-bordered w-32 md:w-auto" />
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="Search" class="input input-bordered w-32 md:w-auto" />
+                        <?php if (isset($_SESSION['username'])):
+                             ?>
                             <div class="dropdown dropdown-end">
                                 <div tabindex="0" role="button"
                                     class="btn btn-ghost btn-circle avatar border border-gray-300">
@@ -47,29 +48,26 @@
                                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow transition-colors duration-300">
                                     <li class="hover:text-primary">
                                         <a class="justify-between">
-                                            My Profile
-                                            <span class="badge">New</span>
+                                            Welcome, <?php echo $_SESSION['username']; ?>
                                         </a>
                                     </li>
-                                    <li class="hover:text-primary"><a href="#watchlist">Watchlist</a></li>
-                                    <li class="hover:text-primary"><a href="#suggestions">Suggestions</a></li>
-                                    <li class="border-b border-gray-400 border-t hover:text-primary"><a>Admin Panel</a>
-                                    </li>
-                                    <li class="hover:text-primary"><a href="#login">Login</a></li>
-                                    <li class="hover:text-primary"><a href="#register">Register</a></li>
+                                    <li class="hover:text-primary"><a href="logout.php">Logout</a></li>
                                 </ul>
                             </div>
-                            <div class="dropdown dropdown-end">
-                                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                                    <i class="fa-solid fa-bars text-lg"></i>
-                                </div>
-                                <ul tabindex="0"
-                                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#browse">Browse Movies</a></li>
-                                    <li><a href="#suggestions">Suggestions</a></li>
-                                </ul>
+                        <?php else: ?>
+                            <a href="login.php" class="btn btn-primary">Login</a>
+                            <a href="register.php" class="btn btn-outline btn-primary">Register</a>
+                        <?php endif; ?>
+                        <div class="dropdown dropdown-end">
+                            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                                <i class="fa-solid fa-bars text-lg"></i>
                             </div>
+                            <ul tabindex="0"
+                                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                <li><a href="/cinematch/index.php">Home</a></li>
+                                <li><a href="/cinematch/pages/browse.php">Browse Movies</a></li>
+                                <li><a href="#suggestions">Suggestions</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
