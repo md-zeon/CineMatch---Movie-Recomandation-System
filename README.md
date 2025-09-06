@@ -280,7 +280,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Project Developer**: Zeanur Rahaman Zeon
 - **Email**: zeon.cse@gmail.com
 - **GitHub**: [md-zeon](https://github.com/md-zeon)
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/zeanur-rahaman-zeon)
+- **LinkedIn**: [https://linkedin.com/in/zeanur-rahaman-zeon](https://linkedin.com/in/zeanur-rahaman-zeon)
 
 ## 🤝 Collaborators
 
