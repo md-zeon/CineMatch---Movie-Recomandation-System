@@ -277,10 +277,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Project Developer**: Zeon Rahman
-- **Email**: zeonrahaman5870@gmail.com
+**Project Developer**: Zeanur Rahaman Zeon
+- **Email**: zeon.cse@gmail.com
 - **GitHub**: [md-zeon](https://github.com/md-zeon)
 - **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/zeanur-rahaman-zeon)
+
+## 🤝 Collaborators
+
+- **MD. SOJIB** ([SOJIBAHAMMAD](https://github.com/SOJIBAHAMMAD))
+- **Md Zihadul Islam** ([csezihad](https://github.com/csezihad))
+- **Md Kamal Hossain** ([kamal-hossin](https://github.com/kamal-hossin))
+- **Samiha Islam Chaity** ([Samiha7231](https://github.com/Samiha7231))
+- **Joti** ([miskatulmomotaj01-ai](https://github.com/miskatulmomotaj01-ai))
+
 
 ## 🙏 Acknowledgments
 
