@@ -5,3 +5,7 @@
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
+
+.tab-btn.active {
+    background-color: #1D4ED8; /* Tailwind blue-700 */
+}
