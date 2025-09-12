@@ -4,6 +4,7 @@ require 'includes/db.php';
 
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
@@ -13,9 +14,9 @@ if (isset($_POST['register'])) {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO users (username, password) VALUES (?, ?)";
+    $query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("ss", $username, $hashed_password);
+    $stmt->bind_param("sss", $username, $email, $hashed_password);
 
     if ($stmt->execute()) {
         header("Location: login.php");
@@ -37,6 +38,7 @@ if (isset($_POST['register'])) {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['email'] = $user['email'];
             header("Location: index.php");
         } else {
             die("Incorrect password!");
@@ -46,3 +48,5 @@ if (isset($_POST['register'])) {
     }
 }
 ?>
+        
+    
