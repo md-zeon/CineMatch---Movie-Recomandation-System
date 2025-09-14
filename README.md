@@ -196,16 +196,16 @@ $mail->Password = 'your-app-password'; // Your email password
 ![Homepage](/images/Homepage.jpg)
 
 ### Movie Browse Page
-![Browse Movies](https://via.placeholder.com/800x600?text=Browse+Movies+Screenshot)
+![Browse Movies](/images/Browse.jpg)
 
 ### Movie Details Page
-![Movie Details](https://via.placeholder.com/800x600?text=Movie+Details+Screenshot)
+![Movie Details](/images/Movie_Details.jpg)
 
-### Admin Panel
-![Admin Panel](https://via.placeholder.com/800x600?text=Admin+Panel+Screenshot)
+### Advanced Search Page
+![Advanced Search](/images/Advanced_Search.jpg)
 
 ### Mobile View
-![Mobile Responsive](https://via.placeholder.com/400x600?text=Mobile+View+Screenshot)
+![Mobile Responsive](/images/Mobile_View.jpg)
 
 ## 📁 Project Structure
 
