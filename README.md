@@ -193,7 +193,7 @@ $mail->Password = 'your-app-password'; // Your email password
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](https://via.placeholder.com/800x600?text=Homepage+Screenshot)
+![Homepage](/images/Homepage.jpg)
 
 ### Movie Browse Page
 ![Browse Movies](https://via.placeholder.com/800x600?text=Browse+Movies+Screenshot)
