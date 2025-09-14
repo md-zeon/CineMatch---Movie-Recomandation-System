@@ -15,8 +15,7 @@ $offset = ($page - 1) * $limit;
 if (!empty($search)) {
     // Get total count of matching movies
     $totalQuery = "SELECT COUNT(*) AS total FROM movies 
-                  WHERE title LIKE '%$search%' 
-                  OR description LIKE '%$search%' 
+                  WHERE title LIKE '%$search%'
                   OR genre LIKE '%$search%'";
     $totalResult = $conn->query($totalQuery);
     $totalMovies = $totalResult->fetch_assoc()['total'];
@@ -24,7 +23,6 @@ if (!empty($search)) {
     // Fetch matching movies with pagination
     $query = "SELECT * FROM movies 
               WHERE title LIKE '%$search%' 
-              OR description LIKE '%$search%' 
               OR genre LIKE '%$search%' 
               ORDER BY rating DESC 
               LIMIT $limit OFFSET $offset";

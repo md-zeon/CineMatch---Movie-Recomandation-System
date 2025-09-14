@@ -24,7 +24,7 @@
                 debounceTimer = setTimeout(() => {
                     const query = this.value.trim();
                     if (query.length > 0) {
-                        fetch(/cinematch/search_suggestions.php?query=${encodeURIComponent(query)})
+                        fetch(`/cinematch/search_suggestions.php?query=${encodeURIComponent(query)}`)
                             .then(res => res.json())
                             .then(data => {
                                 suggestionsDiv.innerHTML = '';

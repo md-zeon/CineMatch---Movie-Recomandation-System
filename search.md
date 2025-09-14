@@ -6,29 +6,29 @@ This document provides a detailed explanation of the search functionality implem
 
 CineMatch offers two types of search functionality:
 
-1. *Basic Search*: Quick search from the navigation bar that searches by movie title, description, or genre
-2. *Advanced Search*: Dedicated page with multiple filtering options including genre, rating range, and sorting preferences
+1. **Basic Search**: Quick search from the navigation bar that searches by movie title, description, or genre
+2. **Advanced Search**: Dedicated page with multiple filtering options including genre, rating range, and sorting preferences
 
 ## Basic Search Implementation
 
 ### Search Form (header.php)
 
-The basic search form is located in the navigation bar and submits to search.php:
+The basic search form is located in the navigation bar and submits to `search.php`:
 
-php
+```php
 <form action="/cinematch/pages/search.php" method="GET" class="flex">
     <input type="text" name="query" placeholder="Search movies..." class="input input-bordered w-32 md:w-auto" required />
     <button type="submit" class="btn btn-primary ml-1">
         <i class="fa-solid fa-search"></i>
     </button>
 </form>
-
+```
 
 ### Search Results Page (search.php)
 
 The search results page processes the query parameter and searches across multiple fields:
 
-php
+```php
 // Get search query
 $search = isset($_GET['query']) ? trim($_GET['query']) : '';
 $search = $conn->real_escape_string($search);
@@ -52,7 +52,7 @@ if (!empty($search)) {
               LIMIT $limit OFFSET $offset";
     $result = $conn->query($query);
 }
-
+```
 
 Key features of the basic search:
 - Searches across multiple fields (title, description, genre)
@@ -67,7 +67,7 @@ Key features of the basic search:
 
 The advanced search page provides a form with multiple filtering options:
 
-php
+```php
 <form method="POST" action="" class="space-y-4">
     <!-- Title -->
     <div class="form-control">
@@ -142,13 +142,13 @@ php
         <button type="reset" class="btn btn-outline">Reset Filters</button>
     </div>
 </form>
-
+```
 
 ### Dynamic Genre List
 
 The advanced search page dynamically loads all available genres from the database:
 
-php
+```php
 // Get all unique genres from the database
 $genresQuery = "SELECT DISTINCT TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(genre, ',', n.digit+1), ',', -1)) as genre_name
                 FROM movies
@@ -169,7 +169,7 @@ while ($row = $genresResult->fetch_assoc()) {
 }
 $genres = array_unique($genres);
 sort($genres);
-
+```
 
 This query:
 1. Splits the comma-separated genre field into individual genres
@@ -180,7 +180,7 @@ This query:
 
 The advanced search builds a dynamic SQL query based on the selected filters:
 
-php
+```php
 // Build query
 $query = "SELECT * FROM movies WHERE 1=1";
 
@@ -203,7 +203,7 @@ if (in_array($sortBy, $validSortColumns) && in_array($sortOrder, $validSortOrder
 } else {
     $query .= " ORDER BY rating DESC";
 }
-
+```
 
 Key features of the advanced search:
 - Filter by movie title (partial matching)
@@ -219,25 +219,25 @@ Key features of the advanced search:
 
 Both search implementations include security measures:
 
-1. *Input Sanitization*: All user inputs are sanitized using $conn->real_escape_string() to prevent SQL injection
-2. *Output Escaping*: All outputs are properly escaped using htmlspecialchars() to prevent XSS attacks
-3. *Validation*: Numeric inputs are validated before being used in queries
-4. *Whitelisting*: Sort columns and orders are validated against whitelists
+1. **Input Sanitization**: All user inputs are sanitized using `$conn->real_escape_string()` to prevent SQL injection
+2. **Output Escaping**: All outputs are properly escaped using `htmlspecialchars()` to prevent XSS attacks
+3. **Validation**: Numeric inputs are validated before being used in queries
+4. **Whitelisting**: Sort columns and orders are validated against whitelists
 
 ## User Interface
 
 The search functionality is accessible from multiple places:
 
-1. *Main Navigation*: Search box in the header
-2. *Mobile Menu*: Search box in the mobile dropdown menu
-3. *Advanced Search Link*: Link below the search box
-4. *Navigation Menu*: "Advanced Search" option in both desktop and mobile navigation
+1. **Main Navigation**: Search box in the header
+2. **Mobile Menu**: Search box in the mobile dropdown menu
+3. **Advanced Search Link**: Link below the search box
+4. **Navigation Menu**: "Advanced Search" option in both desktop and mobile navigation
 
 ## Pagination Implementation
 
 Both search pages implement pagination to handle large result sets:
 
-php
+```php
 // Pagination setup
 $limit = 12;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? intval($_GET['page']) : 1;
@@ -247,7 +247,7 @@ $offset = ($page - 1) * $limit;
 $totalResult = $conn->query($totalQuery);
 $totalMovies = $totalResult->fetch_assoc()['total'];
 $totalPages = ceil($totalMovies / $limit);
-
+```
 
 The pagination UI shows:
 - Previous/Next buttons
@@ -260,14 +260,14 @@ The pagination UI shows:
 
 Potential improvements for the search functionality:
 
-1. *Full-Text Search*: Implement MySQL's FULLTEXT search for better relevance ranking
-2. *Multiple Genre Selection*: Allow users to select multiple genres
-3. *Year/Release Date Filtering*: Add filters for movie release years
-4. *Actor/Director Search*: Expand search to include cast and crew
-5. *Search History*: Save recent searches for users
-6. *Saved Searches*: Allow logged-in users to save their search criteria
-7. *Auto-suggestions*: Implement typeahead suggestions as users type
-8. *Filter by User Ratings*: Allow filtering by user ratings (once implemented)
+1. **Full-Text Search**: Implement MySQL's FULLTEXT search for better relevance ranking
+2. **Multiple Genre Selection**: Allow users to select multiple genres
+3. **Year/Release Date Filtering**: Add filters for movie release years
+4. **Actor/Director Search**: Expand search to include cast and crew
+5. **Search History**: Save recent searches for users
+6. **Saved Searches**: Allow logged-in users to save their search criteria
+7. **Auto-suggestions**: Implement typeahead suggestions as users type
+8. **Filter by User Ratings**: Allow filtering by user ratings (once implemented)
 
 ## Code Structure
 

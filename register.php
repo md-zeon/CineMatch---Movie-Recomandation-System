@@ -10,6 +10,10 @@
                     <input type="text" name="username" id="username" class="w-full px-3 py-2 border rounded-md bg-base-100 border-gray-600 focus:outline-none focus:ring-primary focus:border-primary" required>
                 </div>
                 <div>
+                    <label for="email" class="text-sm font-medium">Email</label>
+                    <input type="email" name="email" id="email" class="w-full px-3 py-2 border rounded-md bg-base-100 border-gray-600 focus:outline-none focus:ring-primary focus:border-primary" required>
+                </div>
+                <div>
                     <label for="password" class="text-sm font-medium">Password</label>
                     <input type="password" name="password" id="password" class="w-full px-3 py-2 border rounded-md bg-base-100 border-gray-600 focus:outline-none focus:ring-primary focus:border-primary" required>
                 </div>

@@ -250,8 +250,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             <?= number_format($movie['rating'], 2) ?></span>
                                     </div>
                                     <div class="flex justify-between text-sm text-gray-500">
-                                        <span><?= date('Y', strtotime($movie['release_date'])) ?></span>
-                                        <span><?= $movie['runtime'] ?> min</span>
+                                        <span>📅 <?= date('Y', strtotime($movie['release_date'])) ?></span>
+                                        <span>⏱ <?= $movie['runtime'] ?> min</span>
                                     </div>
                                 </div>
                             </div>
